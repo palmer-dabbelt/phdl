@@ -1,0 +1,19 @@
+LANGUAGES   += c++
+COMPILEOPTS += -std=c++11
+COMPILEOPTS += -pedantic
+COMPILEOPTS += -Wall
+COMPILEOPTS += -Wextra
+COMPILEOPTS += -Werror
+
+LANGUAGES   += c++
+COMPILEOPTS += -Isrc
+
+LANGUAGES   += c++
+COMPILEOPTS += `ppkg-config libputil --cflags`
+LINKOPTS    += `ppkg-config libputil --libs`
+
+LANGUAGES   += bash
+
+BINARIES    += verilog2verilog
+SOURCES     += verilog2verilog.c++
+TESTSRC	    += gcd.bash
